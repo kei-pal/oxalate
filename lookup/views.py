@@ -3,4 +3,4 @@ from django.http import HttpResponse
 
 # Create your views here.
 def lookup(request):
-	return HttpResponse("Lookup page!")
+	return render(request, 'lookup.html')
