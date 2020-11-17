@@ -8,3 +8,6 @@ class Ingredient(models.Model):
 	alternatives = models.CharField(max_length=200)
 	ox_per_100g = models.DecimalField(max_digits=5, decimal_places=2)
 	source_notes = models.TextField()
+
+	def __str__(self):
+		return self.name
