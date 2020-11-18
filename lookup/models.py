@@ -11,3 +11,7 @@ class Ingredient(models.Model):
 
 	def __str__(self):
 		return self.name
+
+	@property
+	def ox_per_portion(self):
+		return self.portion_grams * (self.ox_per_100g / 100)

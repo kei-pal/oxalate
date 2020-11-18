@@ -1,12 +1,21 @@
-from django.shortcuts import render
+from django.shortcuts import get_object_or_404, get_list_or_404, render
 from django.http import HttpResponse
+
+from .models import Ingredient
 
 # Create your views here.
 def lookup(request):
 	return render(request, 'lookup.html')
 
 def ingredient(request):
+	ing_name = 'Apple'
+	ingredient = get_object_or_404(Ingredient, name=ing_name)
+
 	context = {
-		'test': 'penis',
+		'name': ing_name,
+		'source_notes': ingredient.source_notes,
+		'ox_per_portion': ingredient.ox_per_portion,
+		'portion_desc': ingredient.portion_desc,
+		'portion_grams': ingredient.portion_grams,
 	}
 	return render(request, 'ingredient.html', context)
