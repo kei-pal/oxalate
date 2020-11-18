@@ -3,12 +3,11 @@
 }
 
 .img-fluid {
-	max-width: 425px;
+	max-width: 350px; /* 350 px */
 }
 
 .jumbotron {
-	padding: 0;
+	padding: 0px;
 	background-color:transparent !important;
 }
-
 

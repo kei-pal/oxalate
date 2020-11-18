@@ -8,7 +8,7 @@ def lookup(request):
 	return render(request, 'lookup.html')
 
 def ingredient(request):
-	ing_name = 'Apple'
+	ing_name = 'Spinach'
 	ingredient = get_object_or_404(Ingredient, name=ing_name)
 
 	context = {
@@ -17,5 +17,6 @@ def ingredient(request):
 		'ox_per_portion': ingredient.ox_per_portion,
 		'portion_desc': ingredient.portion_desc,
 		'portion_grams': ingredient.portion_grams,
+		'alternatives': ingredient.alternatives,
 	}
 	return render(request, 'ingredient.html', context)

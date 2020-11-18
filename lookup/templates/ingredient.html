@@ -7,14 +7,25 @@
 {% endblock %}
 
 {% block title %}
-{{ name }}
+Amount of Oxalates
+{% endblock %}
+
+{% block navbar_main %}
+Amount of Oxalates in: {{ name }}
 {% endblock %}
 
 {% block content %}
 
 <section class="jumbotron">
 	<div class="container text-center">
-		<img src="{% static 'lookup/low.png' %}" class="img-fluid w-100" alt="My image">
+    <br>
+    {% if ox_per_portion <= 10 %}
+		  <img src="{% static 'lookup/low.png' %}" class="img-fluid w-100" alt="My image">
+    {% elif ox_per_portion <= 25 %}
+      <img src="{% static 'lookup/mod.png' %}" class="img-fluid w-100" alt="My image">
+    {% else %}
+      <img src="{% static 'lookup/high.png' %}" class="img-fluid w-100" alt="My image">
+    {% endif %}
 	</div>
 </section>
 
@@ -23,7 +34,7 @@
     <div class="card">
       <div class="card-header" id="headingOne">
         <h2 class="mb-0">
-          <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+          <button class="btn btn-link btn-block text-center" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
             {{ ox_per_portion }} mg per portion of {{ portion_desc }} ({{ portion_grams }} g)
           </button>
         </h2>
@@ -36,5 +47,18 @@
     </div>
   </div>
 </div>
+
+<br>
+
+{% if ox_per_portion > 10 %}
+  <div class="container">
+    <div class="card">
+        <h5 class="card-header">Low-oxalate alternatives:</h5>
+        <div class="card-body">
+          {{ alternatives }}
+        </div>
+    </div>
+  </div>
+{% endif %}
 
 {% endblock %}
