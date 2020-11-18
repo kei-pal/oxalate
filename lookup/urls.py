@@ -2,5 +2,6 @@ from django.urls import path
 from . import views
 
 urlpatterns = [
-	path('', views.lookup, name='lookup')
+	path('', views.lookup, name='lookup'),
+	path('ingredient/', views.ingredient, name='ingredient'),
 ]

@@ -4,3 +4,9 @@ from django.http import HttpResponse
 # Create your views here.
 def lookup(request):
 	return render(request, 'lookup.html')
+
+def ingredient(request):
+	context = {
+		'test': 'penis',
+	}
+	return render(request, 'ingredient.html', context)
