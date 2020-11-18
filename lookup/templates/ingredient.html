@@ -1,14 +1,19 @@
 {% extends 'base.html' %}
 {% load static %}
 
+
+
 {% block title %}
 Ingredient Name
 {% endblock %}
 
 {% block content %}
-<section class="jumbotron text-center">
-	<div class="container-sm">
-		<img src="{% static 'lookup/low.png' %}" class="img-fluid" alt="My image">
+
+<section class="jumbotron" style="padding:10px;">
+	<div class="container text-center" style="width:400px;">
+		<img src="{% static 'lookup/low.png' %}" class="img-fluid w-100" alt="My image">
 	</div>
 </section>
+
+
 {% endblock %}
