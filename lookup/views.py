@@ -1,14 +1,14 @@
 from django.shortcuts import get_object_or_404, get_list_or_404, render
 from django.http import HttpResponse
 
-from .models import Ingredient
+from .models import Ingredient, Meal, MealIngredient
 
 # Create your views here.
 def lookup(request):
 	return render(request, 'lookup.html')
 
 def ingredient(request):
-	ing_name = 'Spinach'
+	ing_name = 'Apple'
 	ingredient = get_object_or_404(Ingredient, name=ing_name)
 
 	context = {
@@ -20,3 +20,36 @@ def ingredient(request):
 		'alternatives': ingredient.alternatives,
 	}
 	return render(request, 'ingredient.html', context)
+
+def meal(request):
+	meal_name = 'Margherita Pizza'
+
+	grams = 0
+	oxalates = 0
+	ing_ox = 0
+	# Loading recipe
+	meal = get_object_or_404(Meal, name=meal_name)
+	# Finding every connection between meal and ingredients
+	connections = get_list_or_404(MealIngredient, meal=meal)
+
+	rows = []
+
+	for meal_ing in connections:
+		# Sum up individual oxalate amounts
+		ing_ox = meal_ing.ingredient.ox_per_100g * meal_ing.ing_qty_in_g / 100
+		oxalates += ing_ox
+		# Get grams per meal serving size
+		grams += meal_ing.ing_qty_in_g
+
+		ing_name = meal_ing.ingredient.name
+		rows.append((ing_name, round(ing_ox,1), round(meal_ing.ing_qty_in_g,1)))
+
+	# TODO: Get left, right to iterate over ingridient name, oxalate amount and sort in descending order
+	rowsorted = sorted(rows, key=lambda tup: tup[1], reverse=True)
+
+	context = {
+		'name': meal_name,
+		'rows': rowsorted,
+	}
+
+	return render(request, 'meal.html', context)

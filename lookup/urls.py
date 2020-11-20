@@ -4,4 +4,5 @@ from . import views
 urlpatterns = [
 	path('', views.lookup, name='lookup'),
 	path('ingredient/', views.ingredient, name='ingredient'),
+	path('meal/', views.meal, name='meal')
 ]

@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Amount of Oxalates
+{% endblock %}
+
+{% block navbar_main %}
+Amount of Oxalates in: {{ name }}
+{% endblock %}
+
+{% block content %}
+
+<div class="container-fluid">
+	<div class="row-fluid">
+		<div class="col-6 centering text-center">
+			<table class="table table-sm">
+			    <tr>
+			        <th>Ingredient</th>
+			        <th>Amount of Oxalates (mg)</th>
+			        <th>QTY Ingredient (g)</th>
+			    </tr>
+			{% for left, middle, right in rows %} 
+			  <tr>
+			    <td>{{ left }}</td>
+			    <td>{{ middle }}</td>
+			    <td>{{ right }}</td>
+			  </tr>
+			{% endfor %}
+			</table>
+		</div>
+	</div>
+</div>
+
+
+{% endblock %}
+
