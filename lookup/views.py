@@ -47,9 +47,12 @@ def meal(request):
 	# TODO: Get left, right to iterate over ingridient name, oxalate amount and sort in descending order
 	rowsorted = sorted(rows, key=lambda tup: tup[1], reverse=True)
 
+
+
 	context = {
 		'name': meal_name,
 		'rows': rowsorted,
+		'ox_per_portion': 0,
 	}
 
 	return render(request, 'meal.html', context)
