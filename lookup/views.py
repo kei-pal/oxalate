@@ -1,10 +1,20 @@
 from django.shortcuts import get_object_or_404, get_list_or_404, render
-from django.http import HttpResponse
+from django.http import HttpResponse, JsonResponse
 
 from .models import Ingredient, Meal, MealIngredient
 
 # Create your views here.
 def lookup(request):
+	if 'term' in request.GET:
+		qsMeal = Meal.objects.filter(name__icontains=request.GET.get('term'))
+		qsIngredient = Ingredient.objects.filter(name__icontains=request.GET.get('term'))
+		names = list()
+		for meal in qsMeal:
+			names.append("meal/"+meal.name)
+		for ingredient in qsIngredient:
+			names.append("ingr/"+ingredient.name)
+
+		return JsonResponse(names, safe=False)
 	return render(request, 'lookup.html')
 
 def ingredient(request):
