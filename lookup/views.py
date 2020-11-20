@@ -17,12 +17,11 @@ def lookup(request):
 		return JsonResponse(names, safe=False)
 	return render(request, 'lookup.html')
 
-def ingredient(request):
-	ing_name = 'Apple'
-	ingredient = get_object_or_404(Ingredient, name=ing_name)
+def ingredient(request, ingr_name):
+	ingredient = get_object_or_404(Ingredient, name=ingr_name)
 
 	context = {
-		'name': ing_name,
+		'name': ingr_name,
 		'source_notes': ingredient.source_notes,
 		'ox_per_portion': ingredient.ox_per_portion,
 		'portion_desc': ingredient.portion_desc,
@@ -31,9 +30,7 @@ def ingredient(request):
 	}
 	return render(request, 'ingredient.html', context)
 
-def meal(request):
-	meal_name = 'Margherita Pizza'
-
+def meal(request, meal_name):
 	grams = 0
 	oxalates = 0
 	ing_ox = 0
