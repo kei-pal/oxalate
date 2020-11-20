@@ -10,9 +10,9 @@ def lookup(request):
 		qsIngredient = Ingredient.objects.filter(name__icontains=request.GET.get('term'))
 		names = list()
 		for meal in qsMeal:
-			names.append("meal/"+meal.name)
+			names.append("m/"+meal.name)
 		for ingredient in qsIngredient:
-			names.append("ingr/"+ingredient.name)
+			names.append("i/"+ingredient.name)
 
 		return JsonResponse(names, safe=False)
 	return render(request, 'lookup.html')
