@@ -52,7 +52,9 @@ def meal(request):
 	context = {
 		'name': meal_name,
 		'rows': rowsorted,
-		'ox_per_portion': 0,
+		'ox_per_portion': oxalates,
+		'portion_grams': grams,
+		'portion_desc': meal.portion_desc,
 	}
 
 	return render(request, 'meal.html', context)
