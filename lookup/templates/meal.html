@@ -66,9 +66,31 @@ Amount of Oxalates in: {{ name }}
   </div>
 </div>
 
+<br>
 
+{% if alternatives != 'none' %}
+  <div class="container">
+    <div class="card">
+        <h5 class="card-header">Low-oxalate alternatives:</h5>
+        <div class="card-body">
+          {{ alternatives }}
+        </div>
+    </div>
+  </div>
+{% endif %}
 
+<br>
 
+{% if source_notes != 'none' %}
+  <div class="container">
+    <div class="card">
+        <h5 class="card-header">Note:</h5>
+        <div class="card-body">
+          {{ source_notes }}
+        </div>
+    </div>
+  </div>
+{% endif %}
 
 {% endblock %}
 
