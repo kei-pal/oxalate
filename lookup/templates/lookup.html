@@ -2,7 +2,7 @@
 
 {% block custom_css %}
 {% load static %}
-<link rel="stylesheet" type="text/css" href="{% static 'lookup/ingredient.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'lookup/lookup.css' %}">
 <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 {% endblock %}
 
@@ -59,6 +59,15 @@ $( function() {
 <br>
 
 <div class="container">
+
+	<div class="row justify-content-center">
+		<div class="text-right">
+			<a href="#">Can't find what you're looking for?</a>
+		</div>
+	</div>
+
+	<br>
+
 	<div class="row justify-content-center">
 		<div class="text-right">
 			<a href="#">Disclaimer</a>
@@ -69,12 +78,17 @@ $( function() {
 			<a href="#">Why the i/ & m/?</a>
 		</div>
 	</div>
-	<br>
-	<div class="row justify-content-center">
-		<div class="text-right">
-			<a href="#">Add to homescreen</a>
+</div>
+
+
+<div class="navbar fixed-bottom" style="background-color: #f5f5f5;">
+      <div class="container">
+			<div class="row justify-content-center">
+				<div class="text-right">
+					<a href="#">Add to homescreen</a>
+				</div>
+			</div>
 		</div>
-	</div>
 </div>
 
 
