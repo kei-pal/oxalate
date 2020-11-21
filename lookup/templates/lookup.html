@@ -26,7 +26,7 @@ Amount of Oxalates
 			  <div class="input-group-prepend">
 			    <!-- <span class="input-group-text" id="basic-addon3">Amount of Oxalates in:</span> -->
 			  </div>
-			  <input type="text" class="form-control" name="Meal" id="Meal" aria-describedby="basic-addon3" placeholder="Amount of oxalates in...">
+			  <input type="text" class="form-control rounded" name="Meal" id="Meal" aria-describedby="basic-addon3" placeholder="Amount of oxalates in...">
 			</div>
 		</div>
 	</div>
@@ -55,8 +55,10 @@ $( function() {
 <div class="row">
   <div class="col">
     <div class="collapse multi-collapse" id="multiCollapseExample3">
-      <div class="card card-body">
-        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+      <div class="card card-body text-center">
+      	<p>
+        Click the bar above and begin typing at least 3 letters of the food you're looking for. Still can't find it? It might need to be added. You can request it via the<a href="#">&nbsp;feedback&nbsp;</a>tab.
+    </p>
       </div>
     </div>
   </div>
@@ -72,14 +74,16 @@ $( function() {
   <div class="col">
     <div class="collapse multi-collapse" id="multiCollapseExample1">
       <div class="card card-body">
-        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+        Although the best efforts are made to ensure the information on this app is reliable, up-to-date, and correct, this app and information within does not replace the advice given by medical professionals.
+
+        This app does not intend to treat, diagnose, prevent, or cure diseases. It is to be used at your own risk and it meant to be used as a guideline only. Due to the inconsistent nature of foods and portion sizes, the information in this app might not apply to use and is based off the add developer's (75kg 24 year old male's) average portion sizes. 
       </div>
     </div>
   </div>
   <div class="col">
     <div class="collapse multi-collapse" id="multiCollapseExample2">
       <div class="card card-body">
-        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+        You may be wondering why there are "i/" or "/m" before the food dropdown search results. This is due to the way I am have coded the databses, using seperate databases for meals and ingredients respectively (since their result page's vary slightly). I am not a professional web developer and wanted to code this app to try aid the gap in having easily accessible oxalate contents in complete meals, as well as a change history of research studies for individual ingredients. The code for this website is open-source and can be found on my github page.
       </div>
     </div>
   </div>
@@ -93,9 +97,15 @@ $( function() {
 				<div class="text-right">
 					<a href="#">Add to homescreen</a>
 				</div>
+				<div class="col-1"></div>
+				<div class="text-center">
+					<a href="#">Help development</a>
+				</div>
 			</div>
 		</div>
 </div>
 
 
 {% endblock %}
+
+
