@@ -27,3 +27,8 @@ body {
   padding: 0 15px;
 }
 
+.ui-state-active {
+  background-color: #18bc9c !important;
+  border-color: #18bc9c !important;
+}
+
