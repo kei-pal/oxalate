@@ -30,21 +30,14 @@ Amount of Oxalates
 	</div>
 </div>
 
-<!-- <div class="container-fluid">
-	<div class="row-fluid">
-		<div class="text-center mx-auto">
-			<div class="input-group mb-3">
-			  <div class="input-group-prepend">
-			  </div>
-			  <input type="text" class="form-control rounded" name="Meal" id="Meal" aria-describedby="basic-addon3" placeholder="Amount of oxalates in...">
-			</div>
-		</div>
-	</div>
-</div> -->
-
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
 <script>
+$('input:text').focus(
+    function(){
+        $(this).val('');
+    });
 $( function() {
 	$( "#Meal" ).autocomplete({
 		source: '{% url 'lookup' %}',
@@ -100,16 +93,11 @@ $( function() {
 </div>
 <!--endtoggle-->
 
-
 <div class="bg-primary fixed-bottom">
       <div class="container">
 			<div class="row justify-content-center">
-				<div class="text-right">
-					<a href="https://www.howtogeek.com/196087/how-to-add-websites-to-the-home-screen-on-any-smartphone-or-tablet/">How to add to homescreen</a>
-				</div>
-				<div class="col-1"></div>
 				<div class="text-center">
-					<a href="#">Help development</a>
+					<a href="#">How to add to homescreen</a>
 				</div>
 			</div>
 		</div>
