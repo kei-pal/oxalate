@@ -22,7 +22,7 @@ def ingredient(request, ingr_name):
 
 	context = {
 		'name': ingr_name,
-		'source_notes': ingredient.source_notes,
+		'sources': ingredient.sources,
 		'ox_per_portion': ingredient.ox_per_portion,
 		'portion_desc': ingredient.portion_desc,
 		'portion_grams': ingredient.portion_grams,

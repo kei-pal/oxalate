@@ -7,7 +7,7 @@ class Ingredient(models.Model):
 	portion_grams = models.IntegerField()
 	alternatives = models.CharField(max_length=200)
 	ox_per_100g = models.DecimalField(max_digits=5, decimal_places=2)
-	source_notes = models.TextField()
+	sources = models.TextField()
 
 	def __str__(self):
 		return self.name

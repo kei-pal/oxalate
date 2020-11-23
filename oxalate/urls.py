@@ -20,4 +20,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('lookup/', include('lookup.urls')),
     path('', include('lookup.urls')),
+    path('info/', include('info.urls')),
 ]
