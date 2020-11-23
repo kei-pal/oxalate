@@ -2,7 +2,7 @@
 
 {% block custom_css %}
 {% load static %}
-<link rel="stylesheet" type="text/css" href="{% static 'lookup/ingredient.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'css/mealingredient.css' %}">
 {% endblock %}
 
 {% block title %}
@@ -30,10 +30,10 @@ Amount of Oxalates
 
 <div class="container">
   <div class="accordion" id="accordionExample">
-    <div class="card">
+    <div class="card border-success">
       <div class="card-header" id="headingOne">
         <h2 class="mb-0">
-          <button class="btn btn-link btn-block text-center" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+          <button class="btn btn-block text-center" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
             {{ ox_per_portion }} mg per portion of {{ portion_desc }} ({{ portion_grams }} g)
           </button>
         </h2>
@@ -83,7 +83,7 @@ Amount of Oxalates
 
 {% if source_notes != 'none' %}
   <div class="container">
-    <div class="card">
+    <div class="card border-primary">
         <h5 class="card-header">Note:</h5>
         <div class="card-body">
           {{ source_notes }}
