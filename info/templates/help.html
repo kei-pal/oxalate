@@ -15,6 +15,32 @@ Help Development
 
 {% block content %}
 
+<div class="container marketing">
+
+	<br>
+
+	<div class="row featurette">
+	  <div class="col-md-7 order-md-2">
+	    <h2><span class="text-muted">Thank you for helping.</span></h2>
+	    <p class="lead">Your donations help cover the cost of maintaining the webapp server and speed up development so that we can help more people more quickly.</p>
+	  </div>
+	  <div class="col-md-5 order-md-1">
+	  	<div class="container" align="center">
+		    <form action="https://www.paypal.com/donate" method="post" target="_top">
+			<input type="hidden" name="cmd" value="_donations" />
+			<input type="hidden" name="business" value="GM5UK9MWEQ4HL" />
+			<input type="hidden" name="item_name" value="Helps cover the cost of maintaining the webapp and speed up development." />
+			<input type="hidden" name="currency_code" value="USD" />
+			<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" />
+			<img alt="" border="0" src="https://www.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1" />
+			</form>
+		</div>
+	  </div>
+	</div>
+
+</div><!-- /.container -->
+
+
 <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 {% endblock %}
