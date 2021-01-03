@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block custom_css %}
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/mealingredient.css' %}">
+{% endblock %}
+
+{% block title %}
+Amount of Oxalates
+{% endblock %}
+
+{% block navbar_main %}
+Feedback
+{% endblock %}
+
+{% block content %}
+<br>
+<div class="container">
+	<h5>Here at Amount of Oxalates, we appreciate any and all feedback. Like how your boss thinks you do, we thrive off negative feedback!</h5>
+	<h5>Is there a specific food missing from our database? Let us know! It would help us a lot if you can attach any research you have found on the specific food or ingredient, which helps you get updates quicker!</h5>
+
+	<div class="container" align="center">
+	<h5>Send us an email:</h5>
+	<SCRIPT TYPE="text/javascript">
+	emailE = 'gmail.com'
+	emailE = ('aooxalates' + '@' + emailE)
+	document.write('<A href="mailto:' + emailE + '">' + emailE + '</a>')
+	</script>
+	<NOSCRIPT>
+	Email address protected by JavaScript
+	</NOSCRIPT>
+</div>
+</div>
+
+<!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+{% endblock %}

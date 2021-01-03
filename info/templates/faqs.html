@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+
+{% block custom_css %}
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/mealingredient.css' %}">
+{% endblock %}
+
+{% block title %}
+Amount of Oxalates
+{% endblock %}
+
+{% block navbar_main %}
+Frequently Asked Questions
+{% endblock %}
+
+{% block content %}
+
+<!-- Accordion -->
+<div class="accordion" id="accordionExample">
+  <div class="card">
+    <div class="card-header" id="headingOne">
+      <h2 class="mb-0">
+        <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+          Who is this app for?
+        </button>
+      </h2>
+    </div>
+
+    <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+      <div class="card-body">
+        People with no understanding of what an oxalate is but want to be able to cook food for someone that is on a low-oxalate diet. What makes this app great is that it's easily searchable, includes whole meals as well as ingredients, and all results are properly sourced so they you can query anything you are unsure of.
+      </div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-header" id="headingTwo">
+      <h2 class="mb-0">
+        <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+          I have requested a food. How long will it take to get added?
+        </button>
+      </h2>
+    </div>
+    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+      <div class="card-body">
+        This webapp is completely free to use since I believe it can help a lot of people. That means I also have a proper job to focus on but I will try my best to add/update your food as soon as possible. If you would like to help and speed up this process, you can donate by clicking the link at the bottom of the any ingredient/meal page.
+      </div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-header" id="headingThree">
+      <h2 class="mb-0">
+        <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+          Why can't you hear a pterodactyl go to the bathroom?
+        </button>
+      </h2>
+    </div>
+    <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+      <div class="card-body">
+        Because they're extinct.
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+{% endblock %}

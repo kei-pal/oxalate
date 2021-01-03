@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block custom_css %}
+{% load static %}
+<!-- below breaks page layout for some reason -->
+<!-- <link rel="stylesheet" type="text/css" href="{% static 'css/about.css' %}"> -->
+{% endblock %}
+
+{% block title %}
+Amount of Oxalates
+{% endblock %}
+
+{% block navbar_main %}
+About
+{% endblock %}
+
+{% block content %}
+
+<div class="container marketing">
+
+	<br>
+
+	<div class="row featurette">
+	  <div class="col-md-7 order-md-2">
+	    <h2 class="featurette-heading">Hi, I'm Kei.</h2>
+	    <h2><span class="text-muted">I created this webapp to help my mom when she cooks for me.</span></h2>
+	    <p class="lead">I got my first kidney stones when I was 22. The doctor then told me to make sure I drink enough water, gave me a small list of foods to avoid such as spinach or potato chips, and sent me on my way. </p>
+	    <p class="lead">Unsurprisingly I developed kidney stones again two years later. Never wanting to go through that pain again, I did extensive research and found that many foods I thought were "safe" were actually extremely high in oxalates, such as turmeric spice.</p>
+	    <p class="lead">These lists that are published online are difficult to navigate and are often conflicting or based on poor research studies. Another problem is that I do not expect my mother/girlfriend/self to navigate these lists at each meal to ensure it is safe to eat. Therefore I have developed this webapp to address all of these issues, as well as provide oxalate content of foods that include the sources so they can be verified.</p>
+	    <p class="lead">I hope this webapp is as useful to you as it has been to me and my family.</p>
+	  </div>
+	  <div class="col-md-5 order-md-1">
+	    <!-- {% load static %} -->
+	    <img src="{% static 'info/kei.png' %}" class="img-fluid w-100" alt="My image">
+	  </div>
+	</div>
+
+</div><!-- /.container -->
+
+<!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+{% endblock %}
