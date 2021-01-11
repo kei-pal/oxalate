@@ -23,10 +23,11 @@ def ingredient(request, ingr_name):
 	context = {
 		'name': ingr_name,
 		'sources': ingredient.sources,
-		'ox_per_portion': ingredient.ox_per_portion,
+		'ox_per_portion': round(ingredient.ox_per_portion),
 		'portion_desc': ingredient.portion_desc,
 		'portion_grams': ingredient.portion_grams,
 		'alternatives': ingredient.alternatives,
+		'portion_oz': round(ingredient.portion_grams*.035274,2),
 	}
 	return render(request, 'ingredient.html', context)
 
