@@ -23,10 +23,11 @@ def ingredient(request, ingr_name):
 	context = {
 		'name': ingr_name,
 		'sources': ingredient.sources,
-		'ox_per_portion': ingredient.ox_per_portion,
+		'ox_per_portion': round(ingredient.ox_per_portion),
 		'portion_desc': ingredient.portion_desc,
 		'portion_grams': ingredient.portion_grams,
 		'alternatives': ingredient.alternatives,
+		'portion_oz': round(ingredient.portion_grams*.035274,2),
 	}
 	return render(request, 'ingredient.html', context)
 
@@ -49,7 +50,13 @@ def meal(request, meal_name):
 		grams += meal_ing.ing_qty_in_g
 
 		ing_name = meal_ing.ingredient.name
-		rows.append((ing_name, round(ing_ox,1), round(meal_ing.ing_qty_in_g,1)))
+
+		mass_g = float(meal_ing.ing_qty_in_g)
+		mass_oz = mass_g * .035274
+		mass_value = str(round(mass_g,1)) + " / " + str(round(mass_oz,1))
+
+
+		rows.append((ing_name, round(ing_ox,1), mass_value))
 
 	# TODO: Get left, right to iterate over ingridient name, oxalate amount and sort in descending order
 	rowsorted = sorted(rows, key=lambda tup: tup[1], reverse=True)
@@ -57,11 +64,12 @@ def meal(request, meal_name):
 	context = {
 		'name': meal_name,
 		'rows': rowsorted,
-		'ox_per_portion': oxalates,
+		'ox_per_portion': round(oxalates),
 		'portion_grams': grams,
 		'portion_desc': meal.portion_desc,
 		'alternatives': meal.alternatives,
 		'source_notes': meal.source_notes,
+		'portion_oz': round(float(grams)*.035274,2),
 	}
 
 	return render(request, 'meal.html', context)
