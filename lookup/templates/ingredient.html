@@ -34,13 +34,13 @@ Amount of Oxalates
       <div class="card-header" id="headingOne">
         <h2 class="mb-0">
           <button class="btn btn-block text-center" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-            {{ ox_per_portion }} mg per portion of {{ portion_desc }} ({{ portion_grams }}g/{{ portion_oz }}oz)
+            <h5><b>{{ ox_per_portion }} mg</b> per portion of <br/> {{ portion_desc }} <br/> ({{ portion_grams }}g/{{ portion_oz }}oz)</h5>
           </button>
         </h2>
       </div>
       <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
         <div class="card-body">
-          {{ sources }}
+          <h5>{{ sources }}</h5>
         </div>
       </div>
     </div>
@@ -54,7 +54,7 @@ Amount of Oxalates
     <div class="card border-primary">
         <h5 class="card-header">Low-oxalate alternatives:</h5>
         <div class="card-body">
-          {{ alternatives }}
+          <h5>{{ alternatives }}</h5>
         </div>
     </div>
   </div>
