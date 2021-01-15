@@ -1,0 +1,17 @@
+.ui-autocomplete {
+	font-size: 1.5em;
+	border-radius: 4px;
+}
+
+
+#Meal {
+	font-size: 1.5em;
+	border-radius: 4px;
+}
+
+.ui-menu-item .ui-menu-item-wrapper.ui-state-active {
+    background: #51ccb4 !important;
+    font-weight: bold !important;
+    border-color: #51ccb4 !important;
+    border-radius: 4px;
+}
