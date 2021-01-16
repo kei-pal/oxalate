@@ -27,7 +27,7 @@ class Meal(models.Model):
 
 class MealIngredient(models.Model):
 	ingredient = models.ForeignKey(Ingredient, on_delete=models.CASCADE)
-	meal = models.ForeignKey(Meal, on_delete=models.PROTECT)
+	meal = models.ForeignKey(Meal, on_delete=models.CASCADE)
 	ing_qty_in_g = models.DecimalField(max_digits=6, decimal_places=2)
 
 	def __str__(self):
