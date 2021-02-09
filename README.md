@@ -10,7 +10,7 @@ That is where this app comes ins. It aims to tie together all current research i
 
 ## Usage
 
-[The website can be accessed by clicking this link](https://ooxalates.pythonanywhere.com/)
+[The website can be accessed by clicking this link](https://aooxalates.pythonanywhere.com/)
 
 You can find the oxalate content of all the currently-added foods by typing at least consequtive letters of the food - e.g. typing "app" to search for apples.
 
